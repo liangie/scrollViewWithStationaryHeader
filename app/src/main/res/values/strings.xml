@@ -5,4 +5,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <!-- start from here -->
+    <string name="item_card_title">秋 -于秀華</string>
+    <string name="item_card_content">書信依舊未至,\n院子裡的桐樹落完了葉子,\n寒蟬悽切\n...</string>
+    <string name="enable">readAll</string>
 </resources>

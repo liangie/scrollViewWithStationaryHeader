@@ -1,14 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Left Fragment"
-        android:textSize="24dp"
-        android:layout_centerInParent="true"/>
+        android:id="@+id/under_tv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#66000000"
+        android:text="under textview"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_marginTop="50dp"/>
+
+    <View
+        android:id="@+id/alpha_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="#f0f0f0"/>
+
+
+    <com.leon.scrollviewwithstationaryheader.view.CusScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/scroll_content_holder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="300dp"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/card01"
+                layout="@layout/test_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"/>
+
+            <include
+                android:id="@+id/card02"
+                layout="@layout/test_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"/>
+
+            <include
+                layout="@layout/test_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"/>
+
+            <include
+                layout="@layout/test_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"/>
+
+
+        </LinearLayout>
+
+    </com.leon.scrollviewwithstationaryheader.view.CusScrollView>
 
 </RelativeLayout>

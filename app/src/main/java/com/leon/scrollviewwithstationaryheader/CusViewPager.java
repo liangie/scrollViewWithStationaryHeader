@@ -16,6 +16,7 @@ public class CusViewPager extends ViewPager implements ViewPagerIndicator.Indica
     private int mIndicatorWidth;
     private View mIndicator;
 
+
     private ViewPager.OnPageChangeListener mListener;
 
     public CusViewPager(Context context) {

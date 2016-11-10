@@ -19,8 +19,8 @@ public class ViewPagerIndicator extends LinearLayout {
 
     public ViewPagerIndicator(Context context, AttributeSet attrs) {
         super(context, attrs);
-        final TypedArray  atts = context.obtainStyledAttributes(attrs, R.styleable.pagerindicator);
-        mIndicatorCount = atts.getInt(R.styleable.pagerindicator_indicator_num,0);
+        final TypedArray atts = context.obtainStyledAttributes(attrs, R.styleable.pagerindicator);
+        mIndicatorCount = atts.getInt(R.styleable.pagerindicator_indicator_num, 0);
 
     }
 
@@ -34,8 +34,8 @@ public class ViewPagerIndicator extends LinearLayout {
         init();
     }
 
-    private void init(){
-        if(getChildCount()!=1)
+    private void init() {
+        if (getChildCount() != 1)
             throw new IllegalArgumentException("must have only one child");
         mIndicator = getChildAt(0);
     }
@@ -44,8 +44,8 @@ public class ViewPagerIndicator extends LinearLayout {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int parentWidth = getMeasuredWidth();
-        LayoutParams params = (LayoutParams)mIndicator.getLayoutParams();
-        mIndicatorWidth = parentWidth/mIndicatorCount;
+        LayoutParams params = (LayoutParams) mIndicator.getLayoutParams();
+        mIndicatorWidth = parentWidth / mIndicatorCount;
         params.width = mIndicatorWidth;
         mIndicator.setLayoutParams(params);
 
@@ -54,7 +54,9 @@ public class ViewPagerIndicator extends LinearLayout {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        mCallback.gotIndicatorWith(getMeasuredWidth());
+        if (mCallback != null) {
+            mCallback.gotIndicatorWith(getMeasuredWidth());
+        }
     }
 
     public int getmIndicatorWidth() {
@@ -69,7 +71,7 @@ public class ViewPagerIndicator extends LinearLayout {
         return mIndicatorCount;
     }
 
-    public interface IndicatorCallback{
+    public interface IndicatorCallback {
         void gotIndicatorWith(int width);
     }
 }
